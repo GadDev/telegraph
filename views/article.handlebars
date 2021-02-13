@@ -1,0 +1,12 @@
+<h1>{{post.title}}</h1>
+<h2>{{post.standfirst}}</h2>
+{{{post.body}}}
+
+{{#if posts}}
+<ul class="list-group">
+	<!-- Display comment logic -->
+	{{#each posts}}
+	<li>{{title}}</li>
+	{{/each}}
+</ul>
+{{/if}}
