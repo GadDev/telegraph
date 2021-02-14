@@ -1,12 +1,31 @@
-<h1>{{post.title}}</h1>
-<h2>{{post.standfirst}}</h2>
-{{{post.body}}}
+<section class="article">
+	<article class="col-9 ">
+		<div class="col-9 offset-3">
+			<h1>{{post.title}}</h1>
+			<h2 class="stanfirst">{{post.standfirst}}</h2>
+			<time>{{post.date}}</time>
+		</div>
+		<div class="col-9">
+			<picture class="article-image">
+				<source srcset={{post.image}} media="(min-width: 800px)">
+				<img src={{post.image}} alt={{post.title}} />
+			</picture>
+		</div>
+		<div class="col-9 offset-3">
+			<div class="article-body-text">
+				{{{post.body}}}
+			</div>
 
-{{#if posts}}
-<ul class="list-group">
-	<!-- Display comment logic -->
-	{{#each posts}}
-	<li>{{title}}</li>
-	{{/each}}
-</ul>
-{{/if}}
+		</div>
+	</article>
+	<aside class="col-3">
+		{{#if posts}}
+		<ul class="list-group">
+			<!-- Display comment logic -->
+			{{#each posts}}
+			<li>{{title}}</li>
+			{{/each}}
+		</ul>
+		{{/if}}
+	</aside>
+</section>

@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const moment = require("moment");
 
 router.get("/", (req, res) => {
 	console.log(req.app.get("meta"));
@@ -9,13 +10,15 @@ router.get("/", (req, res) => {
 });
 
 router.get("/:post", (req, res) => {
-	const postName = req.params.post;
-	console.log(postName);
-	const { post } = req.app.get("post");
+	const { comments } = req.app.get("comments");
 	const { posts } = req.app.get("posts");
+	const { post } = req.app.get("post");
+	const dateFormatted = moment(post.date).format("dddd Do MMMM YYYY, h:mma");
+	const postRequested = { ...post, date: dateFormatted };
+
 	const postsFiltered = posts.filter((item) => item.category === post.category);
 	res.render("article", {
-		post,
+		post: postRequested,
 		posts: postsFiltered,
 	});
 });

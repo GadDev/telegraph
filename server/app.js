@@ -1,11 +1,17 @@
 const express = require("express");
 const exphbs = require("express-handlebars");
 const router = require("./router");
+const fs = require("fs");
+
 const meta = require("./content/meta.json");
 const post = require("./content/article.json");
 const posts = require("./content/posts.json");
+
 const app = express();
 const port = 3000;
+
+const rawData = fs.readFileSync("db.json");
+const comments = JSON.parse(rawData);
 
 app.engine("handlebars", exphbs());
 app.set("view engine", "handlebars");
@@ -13,6 +19,7 @@ app.set("view engine", "handlebars");
 app.set("meta", meta);
 app.set("post", post);
 app.set("posts", posts);
+app.set("comments", comments);
 
 app.use("*/static", express.static("public"));
 
