@@ -6,12 +6,9 @@ const fs = require("fs");
 const meta = require("./content/meta.json");
 const post = require("./content/article.json");
 const posts = require("./content/posts.json");
-
+const comments = require("../db.json");
 const app = express();
 const port = 3000;
-
-const rawData = fs.readFileSync("db.json");
-const comments = JSON.parse(rawData);
 
 app.engine("handlebars", exphbs());
 app.set("view engine", "handlebars");

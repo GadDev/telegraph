@@ -12,6 +12,16 @@
 	border-top-width: 1px;
 	background-color: #fff;
 	border-top-color: #ddd;
-	padding-left: 48px;
-	padding-right: 48px;
+	padding: 0 48px;
+}
+
+@media all and (max-width: 768px) {
+	/* For mobile phones: */
+	.container {
+		flex-direction: column;
+		padding: 0;
+	}
+	.site-header {
+		padding: 0;
+	}
 }

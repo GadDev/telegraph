@@ -44,9 +44,25 @@ time {
 
 @media all and (max-width: 768px) {
 	/* For mobile phones: */
+
 	.article {
 		flex-direction: column;
 		padding: 0;
+	}
+	.article__header {
+		grid-row: 2;
+	}
+	.article__header,
+	.article__body-text,
+	.comments,
+	.more-stories {
+		padding: 0 1rem;
+	}
+	.article h1 {
+		font-size: 3rem;
+	}
+	.article h2 {
+		font-size: 1.8rem;
 	}
 }
 
@@ -60,7 +76,8 @@ time {
 		width: 100%;
 		min-height: 500px;
 	}
-	.article__body-text {
+	.article__body-text,
+	.article__comments {
 		grid-column: 3/9;
 		width: 100%;
 	}

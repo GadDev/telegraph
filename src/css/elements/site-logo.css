@@ -1,5 +1,12 @@
 .site-logo {
 	padding: 2rem 1rem;
 	height: 32px;
-  width: 190px;
+	width: 190px;
+}
+
+@media all and (max-width: 768px) {
+	.site-logo {
+		height: 28px;
+		width: 172px;
+	}
 }

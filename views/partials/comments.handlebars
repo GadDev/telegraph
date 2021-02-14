@@ -1,0 +1,33 @@
+<section class="comments">
+	<div class="comments-header">
+		<h2><span>{{ totalComments }}</span> Comments</h2>
+		<div class="sorting-comments">
+			<span>Sort:</span>
+			<span class="btn" id="likes-btn">Likes</span>
+			<span class="btn" id="newest-btn">Newest</span>
+		</div>
+	</div>
+	{{#if comments}}
+	<ul id="comments-list">
+		{{#each comments}}
+		<li class="comment__item" data-likes={{likes}} data-time={{dateNonFormatted}}>
+
+			<div class="comment-header">
+				<div class="comment-detail">
+					<h3>{{name}}</h3>
+					<time>{{date}}</time>
+				</div>
+				<div class="comment-likes">
+					<span>{{likes}} </span><span>likes</span>
+				</div>
+			</div>
+			<div class="comment-content">
+				<p>
+					{{body}}
+				</p>
+			</div>
+		</li>
+		{{/each}}
+	</ul>
+	{{/if}}
+</section>
