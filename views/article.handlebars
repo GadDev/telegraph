@@ -1,31 +1,24 @@
 <section class="article">
-	<article class="col-9 ">
-		<div class="col-9 offset-3">
+	<article class="grid">
+		<div class="article__header grid-col-12">
 			<h1>{{post.title}}</h1>
 			<h2 class="stanfirst">{{post.standfirst}}</h2>
 			<time>{{post.date}}</time>
 		</div>
-		<div class="col-9">
+		<div class="article__image grid-col-12">
 			<picture class="article-image">
 				<source srcset={{post.image}} media="(min-width: 800px)">
 				<img src={{post.image}} alt={{post.title}} />
 			</picture>
 		</div>
-		<div class="col-9 offset-3">
+		<div class="article__body-text grid-col-12">
 			<div class="article-body-text">
 				{{{post.body}}}
 			</div>
-
 		</div>
+		<aside class="more-stories grid-col-12">
+			{{> stories }}
+		</aside>
 	</article>
-	<aside class="col-3">
-		{{#if posts}}
-		<ul class="list-group">
-			<!-- Display comment logic -->
-			{{#each posts}}
-			<li>{{title}}</li>
-			{{/each}}
-		</ul>
-		{{/if}}
-	</aside>
+
 </section>

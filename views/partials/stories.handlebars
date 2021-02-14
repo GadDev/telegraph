@@ -1,0 +1,23 @@
+<h2 class="heading-stories">More stories</h2>
+{{#if posts}}
+<ul class="list-group">
+	<!-- Display comment logic -->
+	{{#each posts}}
+	<li class="card__item">
+		<article class="card">
+			<div class="card-thumbnail">
+				<figure style="background-image: url({{thumbnail}});">
+					<img src={{thumbnail}} alt="">
+				</figure>
+			</div>
+			<div class="card-content">
+				<h3>{{title}}</h3>
+				<a href="/">Read more</a>
+			</div>
+			<div></div>
+
+		</article>
+	</li>
+	{{/each}}
+</ul>
+{{/if}}

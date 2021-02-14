@@ -5,9 +5,14 @@
 }
 
 .article-image {
+	display: block;
 	width: 100%;
-	background-color: grey;
-	min-height: 600px;
+	min-height: auto;
+}
+
+.article-image img {
+	width: 100%;
+	height: auto;
 }
 
 .article h1 {
@@ -21,10 +26,10 @@
 
 .article h2 {
 	color: #494949;
-    font-family: Georgia,Times,serif;
-    font-size: 2.2rem;
-    line-height: 1.4;
-    padding-bottom: 8px;
+	font-family: Georgia, Times, serif;
+	font-size: 2.2rem;
+	line-height: 1.4;
+	padding-bottom: 8px;
 }
 
 .article-body-text p {
@@ -37,13 +42,31 @@ time {
 	font-size: 1.2rem;
 }
 
-a {
-}
-
 @media all and (max-width: 768px) {
 	/* For mobile phones: */
 	.article {
 		flex-direction: column;
 		padding: 0;
+	}
+}
+
+@media only screen and (min-width: 1025px) {
+	.article__header {
+		grid-column: 3/10;
+		width: 100%;
+	}
+	.article__image {
+		grid-column: 1/9;
+		width: 100%;
+		min-height: 500px;
+	}
+	.article__body-text {
+		grid-column: 3/9;
+		width: 100%;
+	}
+	.more-stories {
+		grid-column: 10/13;
+		grid-row: 2/12;
+		width: 100%;
 	}
 }
