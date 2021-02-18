@@ -4,17 +4,6 @@
 	padding: 2rem;
 }
 
-.article-image {
-	display: block;
-	width: 100%;
-	min-height: auto;
-}
-
-.article-image img {
-	width: 100%;
-	height: auto;
-}
-
 .article h1 {
 	font-size: 4.1rem;
 	padding-bottom: 16px;
@@ -40,6 +29,17 @@ time {
 	color: #767676;
 	font-family: Arial, sans-serif;
 	font-size: 1.2rem;
+}
+
+.article-image {
+	display: block;
+	width: 100%;
+	min-height: auto;
+}
+
+.article-image img {
+	width: 100%;
+	height: auto;
 }
 
 @media all and (max-width: 768px) {

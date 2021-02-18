@@ -1,7 +1,7 @@
 const Utils = require("./utils");
 
-describe( 'Utils', () => {
-	describe( 'isHomePage', () => {
+describe("Utils", () => {
+	describe("isHomePage", () => {
 		it("should match if on homepage", () => {
 			const utils = new Utils();
 			window.history.pushState({}, "", "/");
@@ -22,16 +22,28 @@ describe( 'Utils', () => {
 
 		it("should not match if on another page", () => {
 			const utils = new Utils();
-			window.history.pushState({}, '', '/news');
+			window.history.pushState({}, "", "/news");
 			expect(utils.isHomePage()).toBeFalsy();
 		});
 
 		it("should match with different homepage parameter", () => {
 			const utils = new Utils({
-				homePagePath: '/home'
+				homePagePath: "/home",
 			});
 			window.history.pushState({}, "", "/home");
 			expect(utils.isHomePage()).toBeTruthy();
+		});
+	});
+
+	describe("isArticlePage", () => {
+		it("should match if on article page", () => {
+			const utils = new Utils();
+			window.history.pushState(
+				{},
+				"",
+				"/einstein-and-churchill-both-took-daily-naps"
+			);
+			expect(utils.isArticlePage()).toBeTruthy();
 		});
 	});
 });
